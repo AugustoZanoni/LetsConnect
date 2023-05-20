@@ -16,6 +16,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseWebSockets(new WebSocketOptions {
+    KeepAliveInterval = TimeSpan.FromMinutes(2)
+});
 
 
 app.MapControllerRoute(
